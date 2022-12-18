@@ -21,7 +21,7 @@
   place-content: center;
   position: absolute;
   width: 100%;
-  /*     background-color: $base-color; */
+  background-color: #B983FF;
 }
 .header a {
   font-family: "Montserrat", sans-serif;
@@ -29,11 +29,15 @@
   font-size: 2rem;
 }
 
+.wrapper {
+  position: relative;
+}
+
 .header--secondary {
   display: flex;
-  position: relative;
+  position: absolute;
   flex-direction: column;
-  background-color: #251749;
+  background-color: #B983FF;
 }
 .header--secondary a, .header--secondary i {
   padding: 1rem 2rem;
@@ -60,8 +64,8 @@
 
 .header__menu {
   transition: all 250ms;
-  position: absolute;
-  background-color: #251749;
+  position: fixed;
+  background-color: #B983FF;
   width: 50%;
   height: 100vh;
   padding: 1rem;
@@ -79,24 +83,24 @@
   box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.3411764706);
 }
 
-.hero {
-  background-color: #251749;
+.hero--login {
+  background-color: #B983FF;
   height: 100vh;
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
   place-content: center;
 }
-.hero .login {
-  background-color: rgba(0, 0, 0, 0.2117647059);
+.hero--login .login {
+  background-color: rgba(185, 131, 255, 0.337254902);
   display: flex;
   border-radius: 0.3rem;
   padding: 1rem;
   flex-direction: column;
-  box-shadow: 0px 0px 100px 15px #263159;
-  border: 1px solid rgba(37, 23, 73, 0.5764705882);
+  box-shadow: 0px 0px 100px 15px #94B3FD;
+  border: 1px solid rgba(255, 255, 255, 0.479);
 }
-.hero .login img {
+.hero--login .login img {
   -webkit-animation: login-pulse infinite alternate 1s;
           animation: login-pulse infinite alternate 1s;
   width: 40%;
@@ -104,21 +108,21 @@
   margin: auto;
   padding: 1rem;
 }
-.hero .login form {
+.hero--login .login form {
   gap: 2rem;
   display: flex;
   flex-direction: column;
   place-items: center;
   text-align: center;
 }
-.hero .login form p {
+.hero--login .login form p {
   color: red;
   font-family: "Oxygen", sans-serif;
 }
-.hero .login form p .active {
+.hero--login .login form p .active {
   color: white;
 }
-.hero .login form input {
+.hero--login .login form input {
   background-color: transparent;
   border: 0;
   border-bottom: 1px solid white;
@@ -127,20 +131,29 @@
   font-size: 1rem;
   color: white;
 }
-.hero .login form button {
-  background-color: rgba(38, 49, 89, 0.5490196078);
+.hero--login .login form input::-moz-placeholder {
+  color: white;
+}
+.hero--login .login form input:-ms-input-placeholder {
+  color: white;
+}
+.hero--login .login form input::placeholder {
+  color: white;
+}
+.hero--login .login form button {
+  background-color: #a35dff;
   padding: 1rem 2rem;
   border-radius: 0.7rem;
-  border: 1px solid #495579;
+  border: 1px solid #94DAFF;
   color: white;
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   transition: background 250ms;
 }
-.hero .login form button:hover {
-  background-color: #263159;
+.hero--login .login form button:hover {
+  background-color: #94B3FD;
 }
-.hero .login form h2 {
+.hero--login .login form h2 {
   color: white;
   font-family: "Montserrat", sans-serif;
   font-size: 2rem;
@@ -199,4 +212,41 @@ table {
 * {
   text-decoration: none;
   list-style: none;
+}
+
+.hero--admin {
+  background-color: #B983FF;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: start;
+}
+.hero--admin .admin {
+  padding: 5rem 0;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.hero--admin .admin p {
+  line-height: 1.25rem;
+  margin: auto;
+  font-family: "Oxygen", sans-serif;
+  color: white;
+  font-size: 1.25rem;
+}
+.hero--admin .admin a {
+  background-color: #b379ff;
+  padding: 1rem 2rem;
+  border-radius: 0.7rem;
+  border: 1px solid #94DAFF;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  transition: background 250ms;
+  margin: auto;
+}
+.hero--admin .admin a:hover {
+  background-color: #94B3FD;
 }/*# sourceMappingURL=main.css.map */

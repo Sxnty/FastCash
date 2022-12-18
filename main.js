@@ -113,17 +113,18 @@ function testLogin() {
     }
   }
 } */
-let burger = document.querySelector("#open-menu")
-burger.addEventListener('click', test)
-let closeMenu = document.querySelector("#close-menu")
-closeMenu.addEventListener('click', test2)
-function test() {
-  let menu = document.querySelector(".header__menu")
-  menu.classList.add('active')
-  console.log("Xd")
+const openMenu = () => {
+  let menu = document.querySelector(".header__menu");
+  menu.classList.add("active");
 }
-function test2() {
-  let menu = document.querySelector(".header__menu")
-  menu.classList.remove('active')
-  console.log("Xd")
+const closeMenu = () => {
+  let menu = document.querySelector(".header__menu");
+  menu.classList.remove("active");
 }
+
+let burger = document.querySelector("#open-menu");
+burger.addEventListener("click", openMenu);
+
+let close = document.querySelector("#close-menu");
+close.addEventListener("click", closeMenu);
+

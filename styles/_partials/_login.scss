@@ -1,18 +1,19 @@
-.hero {
+.hero--login {
   background-color: $base-color;
   height: 100vh;
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
   place-content: center;
+
   .login {
-    background-color: #00000036;
+    background-color: #b983ff56;
     display: flex;
     border-radius: 0.3rem;
     padding: 1rem;
     flex-direction: column;
     box-shadow: 0px 0px 100px 15px $secondary-color;
-    border: 1px solid #25174993;
+    border: 1px solid rgba(255, 255, 255, 0.479);
     img {
       animation: login-pulse infinite alternate 1s;
       width: 40%;
@@ -40,6 +41,9 @@
         padding: 0.5rem;
         font-family: $secondary-font;
         font-size: 1rem;
+        color: white
+      }
+      input::placeholder {
         color: white
       }
       button {

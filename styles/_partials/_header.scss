@@ -4,7 +4,7 @@
     place-content: center;
     position: absolute;
     width: 100%;
-/*     background-color: $base-color; */
+    background-color: $base-color;
     a {
         font-family: 'Montserrat', sans-serif;
         color: white;
@@ -12,9 +12,12 @@
     }
     
 }
+.wrapper {
+    position: relative;
+}
 .header--secondary {
     display: flex;
-    position: relative;
+    position: absolute;
     flex-direction: column;
     background-color: $base-color;
     a,i {
@@ -41,7 +44,7 @@
 }
 .header__menu {
     transition: all 250ms;
-    position: absolute;
+    position: fixed;
     background-color: $base-color;
     width: 50%;
     height: 100vh;

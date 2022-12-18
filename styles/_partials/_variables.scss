@@ -1,11 +1,11 @@
-$base-color: #251749;
-$secondary-color: #263159;
+$base-color: #B983FF;
+$secondary-color: #94B3FD;
 $primary-font: "Montserrat", sans-serif;
 $secondary-font: "Oxygen", sans-serif;
-$third-color: #495579;
+$third-color: #94DAFF;
 
 @mixin primary-button {
-  background-color: #2631598c;
+  background-color: #a35dff;
   padding: 1rem 2rem;
   border-radius: .7rem;
   border: 1px solid $third-color;
@@ -15,9 +15,22 @@ $third-color: #495579;
   transition: background 250ms;
   &:hover {
     background-color: $secondary-color;
-
 }
 }
+@mixin secondary-button {
+    background-color: #b379ff;
+    padding: 1rem 2rem;
+    border-radius: .7rem;
+    border: 1px solid $third-color;
+    color: white;
+    font-family: $primary-font;
+    font-size: 1.2rem;
+    transition: background 250ms;
+    margin: auto;
+    &:hover {
+      background-color: $secondary-color;
+  }
+  }
 
 @keyframes login-pulse {
     0% {
