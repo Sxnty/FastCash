@@ -1,0 +1,29 @@
+$base-color: #251749;
+$secondary-color: #263159;
+$primary-font: "Montserrat", sans-serif;
+$secondary-font: "Oxygen", sans-serif;
+$third-color: #495579;
+
+@mixin primary-button {
+  background-color: #2631598c;
+  padding: 1rem 2rem;
+  border-radius: .7rem;
+  border: 1px solid $third-color;
+  color: white;
+  font-family: $primary-font;
+  font-size: 1.2rem;
+  transition: background 250ms;
+  &:hover {
+    background-color: $secondary-color;
+
+}
+}
+
+@keyframes login-pulse {
+    0% {
+        filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 0.3));
+    }
+    100% {
+        filter: drop-shadow(0 0 0.4rem rgba(255, 255, 255, 0.3));
+    }
+}

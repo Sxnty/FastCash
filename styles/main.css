@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Oxygen&display=swap");
+@-webkit-keyframes login-pulse {
+  0% {
+    filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 0.3));
+  }
+  100% {
+    filter: drop-shadow(0 0 0.4rem rgba(255, 255, 255, 0.3));
+  }
+}
+@keyframes login-pulse {
+  0% {
+    filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 0.3));
+  }
+  100% {
+    filter: drop-shadow(0 0 0.4rem rgba(255, 255, 255, 0.3));
+  }
+}
+.header {
+  padding: 2rem 0;
+  display: flex;
+  place-content: center;
+  position: absolute;
+  width: 100%;
+  /*     background-color: $base-color; */
+}
+.header a {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  font-size: 2rem;
+}
+
+.header--secondary {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: #251749;
+}
+.header--secondary a, .header--secondary i {
+  padding: 1rem 2rem;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+}
+.header--secondary i {
+  /*         font-size: 2rem; */
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+.header--secondary #open-menu {
+  font-size: 2rem;
+  padding: 1rem;
+}
+.header--secondary #close-menu {
+  font-size: 2rem;
+}
+.header--secondary a {
+  font-family: "Montserrat", sans-serif;
+}
+
+.header__menu {
+  transition: all 250ms;
+  position: absolute;
+  background-color: #251749;
+  width: 50%;
+  height: 100vh;
+  padding: 1rem;
+  left: -500px;
+}
+.header__menu .menu__items {
+  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.active {
+  transition: all 250ms;
+  left: 0px;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.3411764706);
+}
+
+.hero {
+  background-color: #251749;
+  height: 100vh;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+}
+.hero .login {
+  background-color: rgba(0, 0, 0, 0.2117647059);
+  display: flex;
+  border-radius: 0.3rem;
+  padding: 1rem;
+  flex-direction: column;
+  box-shadow: 0px 0px 100px 15px #263159;
+  border: 1px solid rgba(37, 23, 73, 0.5764705882);
+}
+.hero .login img {
+  -webkit-animation: login-pulse infinite alternate 1s;
+          animation: login-pulse infinite alternate 1s;
+  width: 40%;
+  border-radius: 50%;
+  margin: auto;
+  padding: 1rem;
+}
+.hero .login form {
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  text-align: center;
+}
+.hero .login form p {
+  color: red;
+  font-family: "Oxygen", sans-serif;
+}
+.hero .login form p .active {
+  color: white;
+}
+.hero .login form input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid white;
+  padding: 0.5rem;
+  font-family: "Oxygen", sans-serif;
+  font-size: 1rem;
+  color: white;
+}
+.hero .login form button {
+  background-color: rgba(38, 49, 89, 0.5490196078);
+  padding: 1rem 2rem;
+  border-radius: 0.7rem;
+  border: 1px solid #495579;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  transition: background 250ms;
+}
+.hero .login form button:hover {
+  background-color: #263159;
+}
+.hero .login form h2 {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  text-decoration: none;
+  list-style: none;
+}/*# sourceMappingURL=main.css.map */
