@@ -5,21 +5,38 @@
   flex-direction: column;
   text-align: center;
   justify-content: start;
+  background: url("../images/waves-bg.svg") no-repeat center;
+  background-size: cover;
   .admin {
-    padding: 5rem 0;
+    h2 {
+      width: fit-content;
+      color: white;
+      font-family: $primary-font;
+      font-size: 1.5rem;
+    }
+    padding: 10rem 0.2rem;
     gap: 1rem;
     display: flex;
     flex-direction: column;
     text-align: center;
-    p {
-      line-height: 1.25rem;
-      margin: auto;
-      font-family: $secondary-font;
-      color: white;
-      font-size: 1.25rem;
-    }
-    a {
-      @include secondary-button;
+    .admin__selections {
+      display: grid;
+      padding: 1rem 0.5rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      white-space: nowrap;
+      .selection__item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 1rem;
+        border-radius: 0.25rem;
+        color: white;
+        gap: 0.5rem;
+        font-family: $secondary-font;
+        background-color: #9c51ff3b;
+        border: 1px solid #ffffff5d;
+      }
     }
   }
 }

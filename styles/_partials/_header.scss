@@ -1,66 +1,103 @@
 .header {
-    padding: 2rem 0;
-    display: flex;
-    place-content: center;
-    position: absolute;
-    width: 100%;
-    background-color: $base-color;
-    a {
-        font-family: 'Montserrat', sans-serif;
-        color: white;
-        font-size: 2rem;
-    }
-    
+  padding: 2rem 0;
+  display: flex;
+  place-content: center;
+  position: absolute;
+  width: 100%;
+  background-color: $base-color;
+  a {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-size: 2rem;
+  }
 }
 .wrapper {
-    position: relative;
+  position: relative;
 }
 .header--secondary {
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-    background-color: $base-color;
-    a,i {
-        padding: 1rem 2rem;
-        color: white;
-        font-size: 1.5rem;
-        padding: 1rem 0;
-    }
-    i {
-/*         font-size: 2rem; */
-        max-width: fit-content;
-    }
-    #open-menu {
-        font-size: 2rem;
-        padding: 1rem;
-    }
-    #close-menu {
-        font-size: 2rem;
-    }
-    a {
-        font-family: $primary-font;
-    }
-
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  img {
+    width: 15%;
+    padding: 1rem;
+  }
+  a,
+  i {
+    color: white;
+    padding: .5rem 0;
+    font-size: 1.5rem;
+  }
+  i {
+    color: #929292;
+    max-width: fit-content;
+    font-size: 1.2rem;
+  }
+  a {
+    color: black;
+    font-size: 1rem;
+    font-family: $secondary-font;
+  }
+  #open-menu {
+    color: white;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  #close-menu {
+    color: #242424;
+    font-size: 2rem;
+  }
+  a {
+    font-family: $primary-font;
+    max-width: fit-content;
+  }
 }
 .header__menu {
-    transition: all 250ms;
-    position: fixed;
-    background-color: $base-color;
-    width: 50%;
-    height: 100vh;
+  transition: all 250ms;
+  position: fixed;
+  background-color: #fff8f8;
+  width: 75%;
+  height: 100vh;
+  left: -500px;
+  .menu__top {
     padding: 1rem;
-    left: -500px;
-    
-    .menu__items {
-        gap: 3rem;
+    display: flex;
+    place-items: center;
+    background: url("../images/header-bg.svg") no-repeat center;
+    background-size: cover;
+    border-radius: .5rem;
+    img {
+        width: 35%;
+      }
+    .top__text {
+        white-space: nowrap;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  h3 {
+    font-family: $primary-font;
+    color: white;
+  }
+  p {
+    font-family: $secondary-font;
+    color: #ffffff9a;
+  }
+  .menu__items {
+    li {
         display: flex;
         flex-direction: column;
-
+        border-bottom: 1px solid #242424;
+        place-content: center;
     }
-
+    padding: 1rem;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
 }
 .active {
-    transition: all 250ms;
-    left: 0px;
-    box-shadow: 0 0 0 100vmax #00000057;
+  transition: all 250ms;
+  left: 0px;
+  box-shadow: 0 0 0 100vmax #00000057;
 }
