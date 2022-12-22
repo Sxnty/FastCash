@@ -171,14 +171,13 @@ const loanCreator = () => {
         id="loanName"
         type="text"
         name="username"
-        placeholder="Username"
         class="test"
       />
         <p>* Correo electronico</p>
         <input type="email" id="loanEmail" name="loanEmail" itemid="loanEmail" />
         <p>* Numero de contacto</p>
         <input type="number" id="loanNumber" name="loanNumber" itemid="loanNumber"/>
-        <button type="button" id="submit__button">Login</button>
+        <button type="button" id="submit__button">Siguiente</button>
       </form>
         </div>
         <div class="loan__card">
