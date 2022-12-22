@@ -97,18 +97,18 @@ const burger = () => {
   const openMenu = () => {
     let menu = document.querySelector(".header__menu");
     menu.classList.add("active");
-  }
+  };
   const closeMenu = () => {
     let menu = document.querySelector(".header__menu");
     menu.classList.remove("active");
-  }
-  
+  };
+
   let burger = document.querySelector("#open-menu");
   burger.addEventListener("click", openMenu);
-  
+
   let close = document.querySelector("#close-menu");
   close.addEventListener("click", closeMenu);
-}
+};
 const AdminLogin = {
   user: "Admin",
   password: "Admin",
@@ -165,32 +165,38 @@ const loanCreator = () => {
           <h2>Informacion del cliente</h2>
         </div>
         <div class="loan__profile">
-          <form action="">
-            <p>* Nombre</p>
-            <input type="text" id="loanName" name="loanName" />
-            <p>* Correo electronico</p>
-            <input type="email" id="loanEmail" name="loanEmail" />
-            <p>* Numero de contacto</p>
-            <input type="number" id="loanNumber" name="loanNumber" />
-            <button type="submit">Siguiente</button>
-          </form>
+        <form action="">
+        <p>* Nombre</p>
+        <input
+        id="loanName"
+        type="text"
+        name="username"
+        placeholder="Username"
+        class="test"
+      />
+        <p>* Correo electronico</p>
+        <input type="email" id="loanEmail" name="loanEmail" itemid="loanEmail" />
+        <p>* Numero de contacto</p>
+        <input type="number" id="loanNumber" name="loanNumber" itemid="loanNumber"/>
+        <button type="button" id="submit__button">Login</button>
+      </form>
         </div>
         <div class="loan__card">
           <div class="card__top">
-            <h3>Nombre</h3>
-            <p>Numero</p>
+            <h3 id="cardName">Nombre</h3>
+            <p id="cardNumber">Numero</p>
           </div>
           <ul class="card__pay">
             <li>
-              <h3></h3>
+              <h3 id="cardValue"></h3>
               <p>Valor</p>
             </li>
             <li>
-              <h3></h3>
+              <h3 id="cardMonths"></h3>
               <p>Meses</p>
             </li>
             <li>
-              <h3></h3>
+              <h3 id="cardMonthly"></h3>
               <p>Mensual</p>
             </li>
           </ul>
@@ -203,9 +209,21 @@ const loanCreator = () => {
       crossorigin="anonymous"
     ></script>
   </body>
-  `
-  burger()
-}
+  `;
+  document.querySelector("#submit__button").addEventListener("click", () => {
+    let loanName = document.getElementById("loanName").value
+    let loanEmail = document.getElementById("loanEmail").value
+    let loanNumber = document.getElementById("loanNumber").value
+
+  });
+  document.querySelector("#loanName").addEventListener("input", () => {
+    document.getElementById("cardName").textContent = loanName.value
+  })
+  document.querySelector("#loanNumber").addEventListener("input", () => {
+    document.getElementById("cardNumber").textContent = loanNumber.value
+  })
+  burger();
+};
 const menuAdministrador = () => {
   document.querySelector("html").innerHTML = `
   <head>
@@ -282,36 +300,30 @@ const menuAdministrador = () => {
     ></script>
     
   </body>
-  `
-  burger()
-  let logOut = document.querySelector("#logOut")
+  `;
+  burger();
+  let logOut = document.querySelector("#logOut");
   logOut.addEventListener("click", () => {
-    location.reload()
-  })
-  let addLoan = document.querySelector("#addLoan")
-  addLoan.addEventListener("click", loanCreator)
-}
+    location.reload();
+  });
+  let addLoan = document.querySelector("#addLoan");
+  addLoan.addEventListener("click", loanCreator);
+};
 
 const loginAdmin = () => {
   let username = document.getElementById("username").value;
   let password = document.getElementById("password").value;
   if (password == AdminLogin.password && username == AdminLogin.user) {
-    menuAdministrador()
+    menuAdministrador();
   } else {
-    if(!form.querySelector('p')) {
+    if (!form.querySelector("p")) {
       let form = document.getElementById("form");
       let p = document.createElement("p");
       p.innerText = "Los datos ingresados no son correctos.";
       form.append(p);
     }
   }
-}
+};
 
 let button = document.getElementById("submit__button");
 button.addEventListener("click", loginAdmin);
-
-
-
-
-
-
