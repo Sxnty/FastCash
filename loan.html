@@ -32,37 +32,50 @@
             >
           </li>
           <li>
+            <a href=""><i class="fa-solid fa-user"></i> Perfil</a>
             <a href=""
-              ><i class="fa-solid fa-user"></i> Perfil</a
+              ><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesion</a
             >
-            <a href=""
-            ><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesion</a
-          >
           </li>
         </ul>
       </div>
     </header>
 
-    <main class="hero--admin">
-      <section class="admin">
-        <h2>Welcome Admin</h2>
-        <div class="admin__selections">
-          <div class="selection__item">
-            <i class="fa-solid fa-plus"></i>
-            <p>Añadir prestamo</p>
+    <main class="hero--loanCreator">
+      <section class="admin__loan">
+        <div class="loan__top">
+          <h2>Informacion del cliente</h2>
+        </div>
+        <div class="loan__profile">
+          <form action="">
+            <p>* Nombre</p>
+            <input type="text" id="loanName" name="loanName" />
+            <p>* Correo electronico</p>
+            <input type="email" id="loanEmail" name="loanEmail" />
+            <p>* Numero de contacto</p>
+            <input type="number" id="loanNumber" name="loanNumber" />
+            <button type="submit">Siguiente</button>
+          </form>
+        </div>
+        <div class="loan__card">
+          <div class="card__top">
+            <h3>Nombre</h3>
+            <p>Numero</p>
           </div>
-          <div class="selection__item">
-            <i class="fa-solid fa-clock"></i>
-            <p>Historial</p>
-          </div>
-          <div class="selection__item">
-            <i class="fa-solid fa-user"></i>
-            <p>Perfil</p>
-          </div>
-          <div class="selection__item" id="logOut">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            <p>Cerrar sesion</p>
-          </div>
+          <ul class="card__pay">
+            <li>
+              <h3></h3>
+              <p>Valor</p>
+            </li>
+            <li>
+              <h3></h3>
+              <p>Meses</p>
+            </li>
+            <li>
+              <h3></h3>
+              <p>Mensual</p>
+            </li>
+          </ul>
         </div>
       </section>
     </main>
