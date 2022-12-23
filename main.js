@@ -94,6 +94,13 @@ const historialPrestamos = () => {
 
 menuAdmin(); */
 const burger = () => {
+  const menuInteraction = () => {
+    let goToIndex = document.getElementById("index")
+    goToIndex.addEventListener("click", () => {
+      menuAdministrador()
+    })
+  }
+  menuInteraction()
   const openMenu = () => {
     let menu = document.querySelector(".header__menu");
     menu.classList.add("active");
@@ -110,8 +117,8 @@ const burger = () => {
   close.addEventListener("click", closeMenu);
 };
 const AdminLogin = {
-  user: "Admin",
-  password: "Admin",
+  user: "1",
+  password: "1",
 };
 const loanCreator = () => {
   document.querySelector("html").innerHTML = `
@@ -139,7 +146,7 @@ const loanCreator = () => {
         <i class="bi bi-x-lg" id="close-menu"></i>
       </li>
       <li>
-        <a href=""><i class="fa-solid fa-star"></i> Inicio</a>
+        <a id="index"><i class="fa-solid fa-star"></i> Inicio</a>
       </li>
       <li>
         <a href=""><i class="fa-solid fa-plus"></i> Crear prestamo</a>
@@ -177,7 +184,7 @@ const loanCreator = () => {
         <input type="email" id="loanEmail" name="loanEmail" itemid="loanEmail" />
         <p>* Numero de contacto</p>
         <input type="number" id="loanNumber" name="loanNumber" itemid="loanNumber"/>
-        <button type="button" id="submit__button">Siguiente</button>
+        <button type="button" id="loan-next">Siguiente</button>
       </form>
         </div>
         <div class="loan__card">
@@ -209,7 +216,7 @@ const loanCreator = () => {
     ></script>
   </body>
   `;
-  document.querySelector("#submit__button").addEventListener("click", () => {
+  document.querySelector("#loan-next").addEventListener("click", () => {
     let loanName = document.getElementById("loanName").value
     let loanEmail = document.getElementById("loanEmail").value
     let loanNumber = document.getElementById("loanNumber").value
@@ -221,6 +228,58 @@ const loanCreator = () => {
   document.querySelector("#loanNumber").addEventListener("input", () => {
     document.getElementById("cardNumber").textContent = loanNumber.value
   })
+  let nextPage = document.getElementById("loan-next")
+  nextPage.addEventListener("click", () => {
+    let container = document.querySelector(".admin__loan")
+    container.innerHTML = `
+    <div class="loan__top">
+          <h2>Informacion del cliente</h2>
+        </div>
+        <div class="loan__profile">
+          <form action="">
+            <p>* Cantidad</p>
+            <input type="number" id="loanValue" name="loanName"/>
+            <p>* Cuotas</p>
+            <input type="number" id="loanMonths" name="loanEmail"/>
+            <button type="button">Confirmar</button>
+          </form>
+        </div>
+        <div class="loan__card">
+          <div class="card__top">
+            <h3>${loanName.value}</h3>
+            <p>${loanNumber.value}</p>
+          </div>
+          <ul class="card__pay">
+            <li>
+              <h3 id="value"></h3>
+              <p>Valor</p>
+            </li>
+            <li>
+              <h3 id="months"></h3>
+              <p>Cuotas</p>
+            </li>
+            <li>
+              <h3 id="monthly"></h3>
+              <p>Mensual</p>
+            </li>
+          </ul>
+        </div>
+    `
+    document.getElementById("loanValue").addEventListener("input", () => {
+      document.getElementById("value").textContent = loanValue.value
+      if(!loanMonths.value) {
+        document.getElementById("monthly").textContent = loanValue.value
+      }
+    })
+    document.getElementById("loanMonths").addEventListener("input", () => {
+      document.getElementById("months").textContent = loanMonths.value
+      let monthly = loanValue.value / loanMonths.value
+      document.getElementById("monthly").textContent = monthly.toFixed(0)
+    })
+
+    
+  })
+
   burger();
 };
 const menuAdministrador = () => {
@@ -249,7 +308,7 @@ const menuAdministrador = () => {
             <i class="bi bi-x-lg" id="close-menu"></i>
           </li>
           <li>
-            <a href=""><i class="fa-solid fa-star"></i> Inicio</a>
+            <a id="index"><i class="fa-solid fa-star"></i> Inicio</a>
           </li>
           <li>
             <a href=""><i class="fa-solid fa-plus"></i> Crear prestamo</a>
