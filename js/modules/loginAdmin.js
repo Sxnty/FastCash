@@ -1,5 +1,5 @@
 import menuAdministrador from "./menuAdministrator.js"
-const AdminLogin = {
+let AdminLogin = {
     user: "1",
     password: "1",
   };

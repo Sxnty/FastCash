@@ -41,32 +41,30 @@
       </div>
     </header>
 
-    <main class="hero--loanCreator">
+    <main class="hero--loanCsreator">
       <section class="admin__loan">
         <div class="loan__top">
-          <h2>Historial de prestamos</h2>
+          <h2>Administrar Perfil</h2>
         </div>
-        <div class="loan__card nombre">
-            <div class="card__top">
-              <h3>${loanName.value}</h3>
-              <p>${loanNumber.value}</p>
-            </div>
-            <ul class="card__pay">
-              <li>
-                <h3 id="value"></h3>
-                <p>Valor</p>
-              </li>
-              <li>
-                <h3 id="months"></h3>
-                <p>Cuotas</p>
-              </li>
-              <li>
-                <h3 id="monthly"></h3>
-                <p>Mensual</p>
-              </li>
-            </ul>
-          </div>
-          
+      </section>
+      <section class="profile">
+        <img src="./images/flat-man.png" alt="profile pictura">
+        <h3>Santiago Larrosa</h3>
+        <form class="username__changer">
+            <h4>Nombre:</h4>
+            <input type="text" name="userUser" id="userUser" placeholder="Nuevo nombre.">
+            <p id="invalid-user"></p>
+            <button type="button" id="userChanger">Cambiar Nombre</button>
+            
+        </form>
+        <form class="password__changer">
+            <h4>Contraseña:</h4>
+            <input type="password" name="userPass" id="userPass" placeholder="Ingrese nueva contraseña">
+            <input type="password" name="userPass2" id="userPass2" placeholder="Confirme nueva contraseña">
+            <p id="password-miss"></p>
+            <button type="button" id="passChanger">Cambiar contraseña</button>
+
+        </form>
       </section>
     </main>
     <script src="./main.js"></script>

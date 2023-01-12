@@ -1,0 +1,64 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  font-family: $primary-font;
+  color: white;
+  font-size: 1.5rem;
+  img {
+    width: 50%;
+    padding: 1rem;
+    margin: auto;
+  }
+  p {
+    color: red;
+    text-align: center;
+  }
+  .username__changer {
+    font-size: 1rem;
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    input {
+      margin: 0 0.5rem;
+      border: 1px solid $third-color;
+      border-radius: 0.25rem;
+      padding: 0.5rem 2rem;
+      background-color: transparent;
+      &::placeholder {
+        color: #ffffff8a;
+        font-family: $secondary-font;
+        font-style: italic;
+      }
+    }
+    button {
+      @include primary-button;
+      margin: auto;
+    }
+    gap: 1rem;
+  }
+  .password__changer {
+    font-size: 1rem;
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 1rem;
+    input {
+      margin: 0 0.5rem;
+      border: 1px solid $third-color;
+      border-radius: 0.25rem;
+      padding: 0.5rem 2rem;
+      background-color: transparent;
+      &::placeholder {
+        color: #ffffff8a;
+        font-family: $secondary-font;
+        font-style: italic;
+      }
+    }
+    button {
+        @include danger-button;
+        margin: auto;
+    }
+  }
+}

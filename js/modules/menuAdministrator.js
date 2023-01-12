@@ -1,6 +1,8 @@
 import burger from "./burger.js";
 import loanCreator from "./loanCreator.js";
 import historyMenu from "./history.js";
+import profileMenu from "./profile.js";
+
 const menuAdministrador = () => {
     document.querySelector("html").innerHTML = `
     <head>
@@ -59,7 +61,7 @@ const menuAdministrador = () => {
             <i class="bi bi-clock-history"></i>
               <p>Historial</p>
             </div>
-            <div class="selection__item">
+            <div class="selection__item" id="profile">
             <i class="bi bi-person"></i>
               <p>Perfil</p>
             </div>
@@ -88,5 +90,9 @@ const menuAdministrador = () => {
 
     let history = document.getElementById("historyLoan")
     history.addEventListener("click", historyMenu)
+
+    let profile = document.getElementById("profile")
+    profile.addEventListener("click", profileMenu)
+
   };
   export default menuAdministrador

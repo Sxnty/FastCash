@@ -16,7 +16,24 @@ $third-color: #94DAFF;
   &:hover {
     background-color: $secondary-color;
 }
+
+
 }
+@mixin danger-button {
+    background-color: #ff5d5d;
+    padding: 1rem 1rem;
+    border-radius: .7rem;
+    border: 1px solid red;
+    color: white;
+    font-family: $primary-font;
+    font-size: 1.2rem;
+    transition: background 250ms;
+    &:hover {
+      background-color: $secondary-color;
+  }
+  
+  
+  }
 @mixin secondary-button {
     background-color: #b379ff;
     padding: 1rem 2rem;
