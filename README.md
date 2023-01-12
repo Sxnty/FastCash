@@ -5,7 +5,6 @@
 ## Contenido del readme
   - [Desafio](#Desafio)
   - [Construido con](#Construido-con)
-  - [Useful resources](#useful-resources)
   - [Creador](#Creador)
 
 
