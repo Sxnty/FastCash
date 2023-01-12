@@ -1,4 +1,32 @@
-# FastCash
-proyect for coderhouse javascript
+# Proyecto final curso JS de CoderHouse - FastCash
 
-actually only is in mobile version
+- Es importante visualizar la aplicación con la vista responsive en Iphone 12 Pro
+
+## Contenido del readme
+  - [Desafio](#Desafio)
+  - [Construido con](#Construido-con)
+  - [Useful resources](#useful-resources)
+  - [Creador](#Creador)
+
+
+### Desafio
+
+Objetivo:
+
+- Crear una aplicacion usando todos o la mayoria de los conceptos dados en clase.
+
+### Construido con
+
+- HTML
+- CSS
+- JS
+- SASS (https://sass-lang.com)
+- Bootstrap Icons (https://icons.getbootstrap.com)
+
+
+## Creador
+
+- Santiago Larrosa (JavaScript Comisión 34100)
+
+[CoderHouse](https://www.coderhouse.com)
+
