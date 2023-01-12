@@ -4,11 +4,13 @@ import menuAdministrador from "./menuAdministrator.js";
 /* import { AdminLogin } from "./loginAdmin.js"; */
 
 
+
 const profileMenu = () => {
     let profile = {
     name: "Santiago Larrosa",
 };
-
+let profileData = localStorage.getItem("profile");
+let profileName = JSON.parse(profileData);
     document.querySelector("main").innerHTML = `
     <section class="admin__loan">
         <div class="loan__top">
@@ -17,7 +19,7 @@ const profileMenu = () => {
       </section>
       <section class="profile">
         <img src="./images/flat-man.png" alt="profile pictura">
-        <h3 id="name-title">Santiago Larrosa</h3>
+        <h3 id="name-title">${profileName.name}</h3>
         <form class="username__changer">
             <h4>Nombre:</h4>
             <input type="text" name="userUser" id="userUser" placeholder="Nuevo nombre.">
@@ -48,6 +50,8 @@ const profileMenu = () => {
             profile.name = name
             let profileData = JSON.stringify(profile);
             localStorage.setItem("profile", profileData);
+
+           
             document.getElementById("invalid-user").textContent = "Nombre cambiado correctamente. "
         } else {
             document.getElementById("invalid-user").textContent = "El nombre debe tener una cantidad menor a 28 caracteres y no debe ser nulo. "

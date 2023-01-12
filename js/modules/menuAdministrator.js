@@ -4,6 +4,8 @@ import historyMenu from "./history.js";
 import profileMenu from "./profile.js";
 
 const menuAdministrador = () => {
+  let profileData = localStorage.getItem("profile");
+  let profileName = JSON.parse(profileData);
     document.querySelector("html").innerHTML = `
     <head>
       <meta charset="UTF-8" />
@@ -20,7 +22,7 @@ const menuAdministrador = () => {
           <div class="menu__top">
             <img src="./images/flat-man.png" alt="" />
             <div class="top__text">
-              <h3>Santiago Larrosa</h3>
+              <h3>${profileName.name}</h3>
               <p>Administrador</p>
             </div>
           </div>
