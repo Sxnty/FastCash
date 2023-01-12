@@ -6,6 +6,7 @@ import profileMenu from "./profile.js";
 const menuAdministrador = () => {
   let profileData = localStorage.getItem("profile");
   let profileName = JSON.parse(profileData);
+  console.log(profileName)
     document.querySelector("html").innerHTML = `
     <head>
       <meta charset="UTF-8" />

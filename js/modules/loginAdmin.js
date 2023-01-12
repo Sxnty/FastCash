@@ -3,6 +3,16 @@ let AdminLogin = {
     user: "1",
     password: "1",
   };
+
+  if(localStorage.getItem("profile") === null) {
+    let profile = {
+      name: "Santiago Larrosa",
+  };
+    let profileData = JSON.stringify(profile);
+    localStorage.setItem("profile", profileData);
+  }
+
+
 const loginAdmin = () => {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;

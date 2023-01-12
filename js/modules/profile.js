@@ -6,11 +6,9 @@ import menuAdministrador from "./menuAdministrator.js";
 
 
 const profileMenu = () => {
-    let profile = {
-    name: "Santiago Larrosa",
-};
-let profileData = localStorage.getItem("profile");
-let profileName = JSON.parse(profileData);
+    let profileData = localStorage.getItem("profile");
+    let profileName = JSON.parse(profileData);
+
     document.querySelector("main").innerHTML = `
     <section class="admin__loan">
         <div class="loan__top">
@@ -47,8 +45,8 @@ let profileName = JSON.parse(profileData);
 
 
         if(name != "" && name.length<28) {
-            profile.name = name
-            let profileData = JSON.stringify(profile);
+            profileName.name = name
+            let profileData = JSON.stringify(profileName);
             localStorage.setItem("profile", profileData);
 
            
