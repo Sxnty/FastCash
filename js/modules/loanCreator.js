@@ -1,8 +1,9 @@
 import burger from "./burger.js";
+import loanHistory from "./history.js";
 import menuAdministrador from "./menuAdministrator.js";
-var prestamos = []
+var prestamos = [];
 const loanCreator = () => {
-    document.querySelector("html").innerHTML = `
+  document.querySelector("html").innerHTML = `
     <head>
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -97,22 +98,21 @@ const loanCreator = () => {
       ></script>
     </body>
     `;
-    document.querySelector("#loan-next").addEventListener("click", () => {  
-    });
-    document.querySelector("#loanName").addEventListener("input", () => {
-      document.getElementById("cardName").textContent = loanName.value
-    })
-    document.querySelector("#loanNumber").addEventListener("input", () => {
-      document.getElementById("cardNumber").textContent = loanNumber.value
-    })
-    let nextPage = document.getElementById("loan-next")
-    nextPage.addEventListener("click", () => {
-      let loanName = document.getElementById("loanName").value
-      let loanEmail = document.getElementById("loanEmail").value
-      let loanNumber = document.getElementById("loanNumber").value
+  document.querySelector("#loan-next").addEventListener("click", () => {});
+  document.querySelector("#loanName").addEventListener("input", () => {
+    document.getElementById("cardName").textContent = loanName.value;
+  });
+  document.querySelector("#loanNumber").addEventListener("input", () => {
+    document.getElementById("cardNumber").textContent = loanNumber.value;
+  });
+  let nextPage = document.getElementById("loan-next");
+  nextPage.addEventListener("click", () => {
+    let loanName = document.getElementById("loanName").value;
+    let loanEmail = document.getElementById("loanEmail").value;
+    let loanNumber = document.getElementById("loanNumber").value;
 
-      let container = document.querySelector(".admin__loan")
-      container.innerHTML = `
+    let container = document.querySelector(".admin__loan");
+    container.innerHTML = `
       <div class="loan__top">
             <h2>Informacion del cliente</h2>
           </div>
@@ -145,50 +145,49 @@ const loanCreator = () => {
               </li>
             </ul>
           </div>
-      `
-      document.getElementById("loanValue").addEventListener("input", () => {
-        document.getElementById("value").textContent = loanValue.value
-        if(!loanMonths.value) {
-          document.getElementById("monthly").textContent = loanValue.value
-        }
-      })
-      document.getElementById("loanMonths").addEventListener("input", () => {
-        document.getElementById("months").textContent = loanMonths.value
-        let monthly = loanValue.value / loanMonths.value
-        document.getElementById("monthly").textContent = monthly.toFixed(0)
-      })
-      document.getElementById("finish-loan").addEventListener("click", () => {
-        let loanVal = loanValue.value
-        let loanMonth = loanMonths.value
-        let loanMonthly = loanVal / loanMonth
-        function Prestamo(nombre, numero, email,  cantidad, cuotas, mensual) {
-          this.nombre = nombre;
-          this.numero = numero;
-          this.email = email;
-          this.cantidad = cantidad;
-          this.cuotas = cuotas;
-          this.mensual = mensual;
-        }
-        let prestamo1 = new Prestamo(
-          loanName,
-          loanNumber,
-          loanEmail,
-          loanVal,
-          loanMonth,
-          loanMonthly
-        );
-        prestamos.push(prestamo1)
+      `;
+    document.getElementById("loanValue").addEventListener("input", () => {
+      document.getElementById("value").textContent = loanValue.value;
+      if (!loanMonths.value) {
+        document.getElementById("monthly").textContent = loanValue.value;
+      }
+    });
+    document.getElementById("loanMonths").addEventListener("input", () => {
+      document.getElementById("months").textContent = loanMonths.value;
+      let monthly = loanValue.value / loanMonths.value;
+      document.getElementById("monthly").textContent = monthly.toFixed(0);
+    });
+    document.getElementById("finish-loan").addEventListener("click", () => {
+      let loanVal = loanValue.value;
+      let loanMonth = loanMonths.value;
+      let loanMonthly = loanVal / loanMonth;
+      function Prestamo(nombre, numero, email, cantidad, cuotas, mensual) {
+        this.nombre = nombre;
+        this.numero = numero;
+        this.email = email;
+        this.cantidad = cantidad;
+        this.cuotas = cuotas;
+        this.mensual = mensual;
+      }
+      let prestamo1 = new Prestamo(
+        loanName,
+        loanNumber,
+        loanEmail,
+        loanVal,
+        loanMonth,
+        loanMonthly
+      );
+      prestamos.push(prestamo1);
 
-        let prestamosLS = JSON.stringify(prestamos);
-        localStorage.setItem("prestamos", prestamosLS);
-        
-        console.log(prestamo1)
-        menuAdministrador()
-      })
-  
+      let prestamosLS = JSON.stringify(prestamos);
+      localStorage.setItem("prestamos", prestamosLS);
 
-    })
-  
-    burger();
-  };
-export default loanCreator
+      console.log(prestamo1);
+      loanHistory()
+      menuAdministrador();
+    });
+  });
+
+  burger();
+};
+export default loanCreator;

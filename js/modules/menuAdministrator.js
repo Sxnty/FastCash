@@ -1,5 +1,6 @@
 import burger from "./burger.js";
 import loanCreator from "./loanCreator.js";
+import historyMenu from "./history.js";
 const menuAdministrador = () => {
     document.querySelector("html").innerHTML = `
     <head>
@@ -54,7 +55,7 @@ const menuAdministrador = () => {
             <i class="bi bi-plus-circle-dotted"></i>
               <p>Añadir prestamo</p>
             </div>
-            <div class="selection__item">
+            <div class="selection__item" id="historyLoan">
             <i class="bi bi-clock-history"></i>
               <p>Historial</p>
             </div>
@@ -84,5 +85,8 @@ const menuAdministrador = () => {
     });
     let addLoan = document.querySelector("#addLoan");
     addLoan.addEventListener("click", loanCreator);
+
+    let history = document.getElementById("historyLoan")
+    history.addEventListener("click", historyMenu)
   };
   export default menuAdministrador
