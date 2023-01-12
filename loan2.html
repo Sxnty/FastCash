@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>FastCash</title>
+  </head>
+  <body>
+    <header class="header--secondary">
+      <i class="fa-solid fa-bars" id="open-menu"></i>
+      <div class="header__menu" id="burger-menu">
+        <div class="menu__top">
+          <img src="./images/flat-man.png" alt="" />
+          <div class="top__text">
+            <h3>Santiago Larrosa</h3>
+            <p>Administrador</p>
+          </div>
+        </div>
+        <ul class="menu__items">
+          <li>
+            <i class="fa-solid fa-x" id="close-menu"></i>
+          </li>
+          <li>
+            <a id="index"><i class="fa-solid fa-star"></i> Inicio</a>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-plus"></i> Crear prestamo</a>
+            <a href=""
+              ><i class="fa-solid fa-clock"></i> Historial de prestamos</a
+            >
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-user"></i> Perfil</a>
+            <a href=""
+              ><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesion</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="hero--loanCreator">
+      <section class="admin__loan">
+        <div class="loan__top">
+          <h2>Informacion del cliente</h2>
+        </div>
+        <div class="loan__profile">
+          <form action="">
+            <p>* Cantidad</p>
+            <input
+              type="number"
+              id="loanName"
+              name="loanName"
+              itemid="loanName"
+            />
+            <p>* Cuotas</p>
+            <input
+              type="number"
+              id="loanEmail"
+              name="loanEmail"
+              itemid="loanEmail"
+            />
+            <button type="button">Confirmar</button>
+          </form>
+        </div>
+        <div class="loan__card">
+          <div class="card__top">
+            <h3>Nombre</h3>
+            <p>Numero</p>
+          </div>
+          <ul class="card__pay">
+            <li>
+              <h3></h3>
+              <p>Valor</p>
+            </li>
+            <li>
+              <h3></h3>
+              <p>Meses</p>
+            </li>
+            <li>
+              <h3></h3>
+              <p>Mensual</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2940ba2046.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

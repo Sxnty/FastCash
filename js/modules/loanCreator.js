@@ -1,4 +1,6 @@
 import burger from "./burger.js";
+import menuAdministrador from "./menuAdministrator.js";
+var prestamos = []
 const loanCreator = () => {
     document.querySelector("html").innerHTML = `
     <head>
@@ -95,11 +97,7 @@ const loanCreator = () => {
       ></script>
     </body>
     `;
-    document.querySelector("#loan-next").addEventListener("click", () => {
-      let loanName = document.getElementById("loanName").value
-      let loanEmail = document.getElementById("loanEmail").value
-      let loanNumber = document.getElementById("loanNumber").value
-  
+    document.querySelector("#loan-next").addEventListener("click", () => {  
     });
     document.querySelector("#loanName").addEventListener("input", () => {
       document.getElementById("cardName").textContent = loanName.value
@@ -109,6 +107,10 @@ const loanCreator = () => {
     })
     let nextPage = document.getElementById("loan-next")
     nextPage.addEventListener("click", () => {
+      let loanName = document.getElementById("loanName").value
+      let loanEmail = document.getElementById("loanEmail").value
+      let loanNumber = document.getElementById("loanNumber").value
+
       let container = document.querySelector(".admin__loan")
       container.innerHTML = `
       <div class="loan__top">
@@ -120,7 +122,7 @@ const loanCreator = () => {
               <input type="number" id="loanValue" name="loanName"/>
               <p>* Cuotas</p>
               <input type="number" id="loanMonths" name="loanEmail"/>
-              <button type="button">Confirmar</button>
+              <button type="button" id="finish-loan">Confirmar</button>
             </form>
           </div>
           <div class="loan__card">
@@ -155,8 +157,36 @@ const loanCreator = () => {
         let monthly = loanValue.value / loanMonths.value
         document.getElementById("monthly").textContent = monthly.toFixed(0)
       })
+      document.getElementById("finish-loan").addEventListener("click", () => {
+        let loanVal = loanValue.value
+        let loanMonth = loanMonths.value
+        let loanMonthly = loanVal / loanMonth
+        function Prestamo(nombre, numero, email,  cantidad, cuotas, mensual) {
+          this.nombre = nombre;
+          this.numero = numero;
+          this.email = email;
+          this.cantidad = cantidad;
+          this.cuotas = cuotas;
+          this.mensual = mensual;
+        }
+        let prestamo1 = new Prestamo(
+          loanName,
+          loanNumber,
+          loanEmail,
+          loanVal,
+          loanMonth,
+          loanMonthly
+        );
+        prestamos.push(prestamo1)
+
+        let prestamosLS = JSON.stringify(prestamos);
+        localStorage.setItem("prestamos", prestamosLS);
+        
+        console.log(prestamo1)
+        menuAdministrador()
+      })
   
-      
+
     })
   
     burger();
