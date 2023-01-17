@@ -8,6 +8,14 @@
     background-color: #f0f0f0;
 }
 .admin__loan {
+    .card__container {
+        h2 {
+            color: white;
+            padding: 1rem;
+            font-size: .8rem;
+            font-family: $primary-font;
+        }
+    }
     .loan__top {
         background: url("../images/waves-bg.svg") no-repeat center;
         background-size: cover;

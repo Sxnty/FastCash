@@ -19,7 +19,7 @@ const profileMenu = () => {
         <form class="username__changer">
             <h4>Nombre:</h4>
             <input type="text" name="userUser" id="userUser" placeholder="Nuevo nombre.">
-            <p id="invalid-user"></p>
+            <p></p>
             <button type="button" id="userChanger">Cambiar Nombre</button>
             
         </form>
@@ -27,7 +27,7 @@ const profileMenu = () => {
             <h4>Contraseña:</h4>
             <input type="password" name="userPass" id="userPass" placeholder="Ingrese nueva contraseña">
             <input type="password" name="userPass2" id="userPass2" placeholder="Confirme nueva contraseña">
-            <p id="password-miss"></p>
+            <p></p>
             <button type="button" id="passChanger">Cambiar contraseña</button>
 
         </form>
@@ -40,16 +40,17 @@ const profileMenu = () => {
   let changeName = document.getElementById("userChanger");
   changeName.addEventListener("click", () => {
     let name = document.getElementById("userUser").value;
-
+    let userContainer = document.querySelector(".username__changer");
+    let p = userContainer.querySelector("p");
     if (name != "" && name.length < 28) {
       profileName.name = name;
       let profileData = JSON.stringify(profileName);
       localStorage.setItem("profile", profileData);
-
-      document.getElementById("invalid-user").textContent =
-        "Nombre cambiado correctamente. ";
+      p.classList.add("sucess");
+      p.textContent = "Nombre de usuario cambiado correctamente.";
     } else {
-      document.getElementById("invalid-user").textContent =
+      p.classList.add("error");
+      p.textContent =
         "El nombre debe tener una cantidad menor a 28 caracteres y no debe ser nulo. ";
     }
   });
@@ -58,6 +59,8 @@ const profileMenu = () => {
   changePass.addEventListener("click", () => {
     let pass1 = document.getElementById("userPass").value;
     let pass2 = document.getElementById("userPass2").value;
+    let passContainer = document.querySelector(".password__changer");
+    let p = passContainer.querySelector("p");
     if (pass1 === pass2) {
       if (pass1 != "" || pass2 != "") {
         let loginSwitcher = {
@@ -68,12 +71,13 @@ const profileMenu = () => {
         localStorage.setItem("login", JSON.stringify(loginSwitcher));
         const loginTest = JSON.parse(localStorage.getItem("login"));
         console.log(loginTest);
-        document.getElementById("password-miss").textContent =
-          "Contraseña cambiada correctamente.";
+
+        p.classList.add("sucess");
+        p.textContent = "Contraseña cambiada correctamente.";
       }
     } else {
-      document.getElementById("password-miss").textContent =
-        "Las contraseñas no coinciden o son nulas.";
+      p.classList.add("error");
+      p.textContent = "Las contraseñas no coinciden o son nulas";
     }
   });
 };

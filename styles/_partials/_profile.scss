@@ -9,8 +9,12 @@
     padding: 1rem;
     margin: auto;
   }
-  p {
+  .error {
     color: red;
+    text-align: center;
+  }
+  .sucess {
+    color: greenyellow;
     text-align: center;
   }
   .username__changer {
@@ -56,6 +60,7 @@
         font-style: italic;
       }
     }
+    
     button {
         @include danger-button;
         margin: auto;
