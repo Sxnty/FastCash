@@ -11,7 +11,7 @@ const loginData = async () => {
   }
 };
 
-if (await localStorage.getItem("login") === null) {
+if (localStorage.getItem("login") === null) {
   loginData();
 }
 
