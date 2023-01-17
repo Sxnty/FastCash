@@ -11,9 +11,8 @@ const loginData = async () => {
   }
 };
 
-if (localStorage.getItem("login") === null) {
+if (await localStorage.getItem("login") === null) {
   loginData();
-  location.reload(); //cambiar esto de alguna forma
 }
 
 let adminData = localStorage.getItem("login");
