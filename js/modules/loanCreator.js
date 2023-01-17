@@ -129,8 +129,8 @@ const loanCreator = () => {
           </div>
           <div class="loan__card">
             <div class="card__top">
-              <h3>${loanName.value}</h3>
-              <p>${loanNumber.value}</p>
+              <h3>${loanName}</h3>
+              <p>${loanNumber}</p>
             </div>
             <ul class="card__pay">
               <li>

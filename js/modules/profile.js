@@ -66,6 +66,14 @@ const profileMenu = () => {
         let pass2 = document.getElementById("userPass2").value
         if(pass1 === pass2) {
             if(pass1 != "" || pass2 != "") {
+                let loginSwitcher = {
+                    user: 1,
+                    password: pass1
+                }
+                let newPassword = JSON.stringify(pass1);
+                localStorage.setItem("login", JSON.stringify(loginSwitcher));
+                const loginTest = JSON.parse(localStorage.getItem("login"));
+                console.log(loginTest)
                 document.getElementById("password-miss").textContent = "Contraseña cambiada correctamente."
             }
         } else {
