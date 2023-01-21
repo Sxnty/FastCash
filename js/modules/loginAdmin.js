@@ -6,6 +6,8 @@ const loginData = async () => {
     let resultado = await response.json();
     let loginLs = JSON.stringify(resultado);
     localStorage.setItem("login", loginLs);
+
+    
   } catch (error) {
     console.log(error);
   }
@@ -15,7 +17,10 @@ if (localStorage.getItem("login") === null) {
   loginData();
 }
 
-let adminData = localStorage.getItem("login");
+
+
+const loginAdmin = () => {
+  let adminData = localStorage.getItem("login");
 let AdminLogin = JSON.parse(adminData);
 
 if (localStorage.getItem("profile") === null) {
@@ -25,8 +30,6 @@ if (localStorage.getItem("profile") === null) {
   let profileData = JSON.stringify(profile);
   localStorage.setItem("profile", profileData);
 }
-
-const loginAdmin = () => {
   let username = document.getElementById("username").value;
   let password = document.getElementById("password").value;
   if (password == AdminLogin.password && username == AdminLogin.user) {

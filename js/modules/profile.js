@@ -70,7 +70,6 @@ const profileMenu = () => {
         let newPassword = JSON.stringify(pass1);
         localStorage.setItem("login", JSON.stringify(loginSwitcher));
         const loginTest = JSON.parse(localStorage.getItem("login"));
-        console.log(loginTest);
 
         p.classList.add("sucess");
         p.textContent = "Contraseña cambiada correctamente.";

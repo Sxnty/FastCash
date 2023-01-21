@@ -6,7 +6,6 @@ import profileMenu from "./profile.js";
 const menuAdministrador = () => {
   let profileData = localStorage.getItem("profile");
   let profileName = JSON.parse(profileData);
-  console.log(profileName)
     document.querySelector("html").innerHTML = `
     <head>
       <meta charset="UTF-8" />
@@ -28,27 +27,27 @@ const menuAdministrador = () => {
             </div>
           </div>
           <ul class="menu__items">
-            <li>
-              <i class="bi bi-x-lg" id="close-menu"></i>
-            </li>
-            <li>
-              <a id="index"><i class="fa-solid fa-star"></i> Inicio</a>
-            </li>
-            <li>
-              <a href=""><i class="fa-solid fa-plus"></i> Crear prestamo</a>
-              <a href=""
-                ><i class="fa-solid fa-clock"></i> Historial de prestamos</a
-              >
-            </li>
-            <li>
-              <a href=""
-                >Perfil</a
-              >
-              <a href=""
-              ><i class="bi bi-box-arrow-left"></i> Cerrar sesion</a
+          <li>
+            <i class="bi bi-x-lg" id="close-menu"></i>
+          </li>
+          <li>
+            <a id="index"><i class="fa-solid fa-star"></i> Inicio</a>
+          </li>
+          <li>
+            <a id="añadirPrestamo"><i class="fa-solid fa-plus"></i> Crear prestamo</a>
+            <a id="historialPrestamos"
+              ><i class="fa-solid fa-clock"></i> Historial de prestamos</a
             >
-            </li>
-          </ul>
+          </li>
+          <li>
+            <a id="perfil"
+              >Perfil</a
+            >
+            <a href=""
+            ><i class="bi bi-box-arrow-left"></i> Cerrar sesion</a
+          >
+          </li>
+        </ul>
         </div>
       </header>
   

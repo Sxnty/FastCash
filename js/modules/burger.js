@@ -1,10 +1,19 @@
+import historyMenu from "./history.js";
+import loanCreator from "./loanCreator.js";
 import menuAdministrador from "./menuAdministrator.js"
+import profileMenu from "./profile.js";
 const burger = () => {
     const menuInteraction = () => {
       let goToIndex = document.getElementById("index")
       goToIndex.addEventListener("click", () => {
         menuAdministrador()
       })
+      let addLoan = document.getElementById("añadirPrestamo")
+      addLoan.addEventListener("click", loanCreator)
+      let loanHistory = document.getElementById("historialPrestamos")
+      loanHistory.addEventListener("click", historyMenu)
+      let profile = document.getElementById("perfil")
+      profile.addEventListener("click", profileMenu)
     }
     menuInteraction()
     const openMenu = () => {
@@ -21,5 +30,6 @@ const burger = () => {
   
     let close = document.querySelector("#close-menu");
     close.addEventListener("click", closeMenu);
+
   };
   export default burger
