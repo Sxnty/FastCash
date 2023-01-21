@@ -2,8 +2,7 @@ import menuAdministrador from "./menuAdministrator.js";
 
 const loginData = async () => {
   try {
-    let response = await fetch("json/login.json");
-    
+    let response = await fetch("https://raw.githubusercontent.com/Sxnty/FastCash/main/json/login.json");
     let resultado = await response.json();
     let loginLs = JSON.stringify(resultado);
     localStorage.setItem("login", loginLs);
